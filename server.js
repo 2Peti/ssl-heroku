@@ -1,12 +1,14 @@
-import sslRedirect from 'heroku-ssl-redirect';
-import express from 'express';
-const app = express();
- 
-// enable ssl redirect
-app.use(sslRedirect());
- 
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
- 
-app.listen(process.env.PORT || 3000);
+var express = require('express')
+var app = express();
+
+var port = process.env.PORT || 8080;
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+	res.redirect('https://cochces.herokuapp.com'+req.url);
+})
+
+app.listen(port, function() {
+	console.log('app running')
+})

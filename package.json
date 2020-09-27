@@ -1,25 +1,13 @@
 {
-  "name": "Inlets Reverse Proxy",
-  "description": "",
+  "name": "tutorial",
   "version": "1.0.0",
+  "description": "",
   "scripts": {
-    "start": "chmod a+x ./init.sh && ./init.sh && node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "4.13.3",
     "heroku-ssl-redirect": "^0.1.1"
-  },
-  "env": {
-    "TOKEN": {
-      "description": "Your secret password (token). Ideally should be a random string.",
-      "value": ""
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "free"
-    }
   },
   "author": "Kathryn Hodge",
   "license": "ISC"
